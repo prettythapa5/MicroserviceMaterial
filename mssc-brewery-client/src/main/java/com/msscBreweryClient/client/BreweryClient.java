@@ -1,6 +1,5 @@
 package com.msscBreweryClient.client;
 
-import java.net.URI;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -16,8 +15,7 @@ import com.msscBreweryClient.model.BeerDto;
 // didn't add @ConfigPro.... was causing error.
 
 public class BreweryClient {
-	//http://localhost:8080/api/v1/beer-service/
-	public final String BEER_PATH_V1 = "/api/v1/beer-brewery/";
+	public final String BEER_PATH_V1 = "/api/v1/beer-service/";
 	
 	//when I used @Autowired there was qualifier exception for RestTemplate
 	/*
@@ -51,13 +49,6 @@ public class BreweryClient {
 		System.out.println("********>>>>>"+restTemplate.getForObject(apiHost + BEER_PATH_V1 + uuid.toString(), BeerDto.class));
 		//System.out.println(restTemplate.exchange(apiHost + BEER_PATH_V1 + uuid.toString(), HttpMethod.GET, BeerDto.class);
 		return restTemplate.getForObject(apiHost + BEER_PATH_V1 + uuid.toString(), BeerDto.class);
-	}
-	
-	public URI saveNewBeer(BeerDto beerDto) {
-		System.out.println("print beerDto in client controller"+beerDto);
-		System.out.println("Printing path in client controller ==>"+
-				restTemplate.postForLocation(apiHost + BEER_PATH_V1, beerDto));
-		return restTemplate.postForLocation(apiHost + BEER_PATH_V1, beerDto);
 	}
 
 }
