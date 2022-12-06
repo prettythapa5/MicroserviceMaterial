@@ -30,12 +30,15 @@ class BreweryClientTest {
 				.build();
 		URI uri = client.saveNewBeer(beerDto);
 		System.out.println("Printing beerDto ====> " + beerDto);
-		System.out.println("Printing URI path ====> " + uri.getPath());
-
-		assertNotNull(uri);
-		
-
+		System.out.println("Printing URI path ====> " + uri.getPath());		
+		assertNotNull(uri);	
 		// System.out.println("Printing URi in testCase2 ====> "+uri.toString());
+	}
+	
+	@Test
+	void testUpdateBeer() {
+		BeerDto beerDto = BeerDto.builder().beerName("Updated BeerName").build();
+		client.updateBeer(UUID.randomUUID(), beerDto);
 	}
 
 }
