@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pretty.springframework.msscBeerService.web.model.BeerDto;
 
 @RestController
-@RequestMapping("/api/v1/beer")
+@RequestMapping("/api/v1/beer-service")
 public class BeerController {
 	
 	@GetMapping("/{beerId}")
@@ -27,7 +27,8 @@ public class BeerController {
 	@PostMapping
 	public ResponseEntity<BeerDto> saveNewBeer(@RequestBody BeerDto beerDto){
 		//TODO impl
-		return new ResponseEntity<BeerDto>(BeerDto.builder().build(), HttpStatus.CREATED);
+//		return new ResponseEntity<>(beerDto.builder().build(), HttpStatus.CREATED);
+	return new ResponseEntity<BeerDto>(BeerDto.builder().build(), HttpStatus.CREATED);
 	}
 	@PutMapping("/{beerId}")
 	public ResponseEntity<BeerDto> updateBeerById(@RequestBody BeerDto beerDto, 

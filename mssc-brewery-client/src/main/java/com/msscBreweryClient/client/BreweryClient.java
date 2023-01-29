@@ -3,6 +3,7 @@ package com.msscBreweryClient.client;
 import java.net.URI;
 import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Controller;
@@ -27,6 +28,8 @@ public class BreweryClient {
 	 * Dependency annotations:
 	 * {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 	 */
+	
+	//@Autowired
 	private final RestTemplate restTemplate;
 	
 	@Value("${sfg.brewery.apihost}")
@@ -63,5 +66,8 @@ public class BreweryClient {
 	public void updateBeer(UUID uuid, BeerDto beerDto) {
 		restTemplate.put(apiHost + BEER_PATH_V1 + uuid.toString(), beerDto);
 		
+	}
+	public void deleteBeer(UUID uuid) {
+		restTemplate.delete(apiHost + BEER_PATH_V1 + uuid);
 	}
 }

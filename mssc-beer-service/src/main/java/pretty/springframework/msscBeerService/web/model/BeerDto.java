@@ -1,7 +1,5 @@
 package pretty.springframework.msscBeerService.web.model;
 
-import java.math.BigDecimal;
-import java.time.OffsetDateTime;
 import java.util.UUID;
 
 import lombok.AllArgsConstructor;
@@ -15,17 +13,16 @@ import lombok.NoArgsConstructor;
 @Builder
 public class BeerDto {
 	private UUID id;
-	private Integer version;
+	//private Integer version;
 	
-	private OffsetDateTime createdDate;
-	private OffsetDateTime lastModifiedDate;
+	//private OffsetDateTime createdDate;
+	//private OffsetDateTime lastModifiedDate;
 	
 	private String beerName;
-	private BeerStyleEnum beerStyle;
-	
+
 	private Long upc;
 	
-	private BigDecimal price;
+	//private BigDecimal price;
 	
-	private Integer quantityOnHand;
+	//private Integer quantityOnHand;
 }

@@ -16,6 +16,6 @@ public class BeerPagedList extends PageImpl<BeerDto>{
 		// TODO Auto-generated constructor stub
 	}
 
-
+	
 
 }
